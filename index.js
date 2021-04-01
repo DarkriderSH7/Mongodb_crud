@@ -42,7 +42,7 @@ app.post('/post-product',async (req,res)=>{
                   let item = await mongoClient.connect(link)
                   let db =await item.db('product')
 
-                  //always add req to body 
+                
                   await db.collection('product').insertOne(req.body)
                   res.status(200).json({message:'product has been added successfully'})
                   item.close()
@@ -83,5 +83,5 @@ app.delete('delete-product/:id',async(req,res)=>{
 
 
 app.listen(4000,()=>{
-          console.log('server started')
+          console.log('Start')
 })
